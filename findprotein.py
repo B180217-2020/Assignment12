@@ -17,5 +17,5 @@ if int(number_p) > 1000:
 	print("There are more than 1000 sequences, we need to decrease the number")
 	os.system('seqkit sample -n 1000 rawprotset.fa -o protset_1p.fa')
 else:
-	os.rename("rawprotset.fa","protsett_1p.fa")
+	os.rename("rawprotset.fa","protset_1p.fa")
 
