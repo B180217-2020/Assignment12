@@ -19,5 +19,5 @@ while read onesequence
 		echo $onesequence 'have' $x 'motif' >> motifsummary.txt
 		echo $onesequence 'have' $x 'motif' >> allmotifs.txt
 	fi
-	done < favor_prot250.text
+	done < favor_protset.text
 cat allmotifs.txt
