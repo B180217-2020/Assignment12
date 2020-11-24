@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "scan the protein sequences of interest with motifs from the PROSITE database"
 echo "This is the simple motif information of each proteins, if you want to check the detailed motif information, please check the motiffile/proteinname.motif" > motifsummary.txt
 echo "This is also simple motif information include all the motifs in the protein dataset" > allmotifs.txt
