@@ -39,7 +39,7 @@ if int(number_p) >= 250:
 	favor_prot_w.close()
 	
 	#use pullseq to find the fasta file of the 250 sequences and clustalo them, as result using plotcon to plot the level of conservation
-	subprocess.call("/localdisk/data/BPSM/Assignment2/pullseq -i protset_1p.fa -n favor_prot250.text > protset_2p.fa",shell=True)
+	subprocess.call("/localdisk/data/BPSM/Assignment2/pullseq -i protset_1p.fa -n favor_protset.text > protset_2p.fa",shell=True)
 	os.system('clustalo -i protset_2p.fa -t Protein -o protset_toplotcon.fa')
 	os.system('plotcon -sequences protset_toplotcon.fa -winsize 4 -graph svg')
 	print("The plot saves as plotcon.svg")
@@ -56,11 +56,10 @@ else:
 	protmatrix_modify.index= header 
 	protmatrix_modify.drop(columns=0,inplace=True)
 	protmatrix_modify.columns= header
-        favor_protset = list(protmatrix_modify.index)[:number_p]
-        favor_protset = '\n'.join(favor_protset)
-        favor_prot_w = open("favor_protset.text","w")
-        favor_prot_w.write(f"{favor_protset}")
-        favor_prot_w.close() 
+	favor_protset = '\n'.join(header)
+	favor_prot_w = open("favor_protset.text","w")
+	favor_prot_w.write(f"{favor_protset}")
+	favor_prot_w.close() 
 	print("After modifying, this is Pairwise distance matrix!\n",protmatrix_modify)
 	print("This is the list of proteins we found\n",header)
 	os.system('plotcon -sequences protset_toplotcon.fa -winsize 4 -graph svg')
